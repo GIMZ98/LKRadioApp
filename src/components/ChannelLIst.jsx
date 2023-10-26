@@ -10,9 +10,11 @@ const ChannelLIst = () => {
 
 
   const playClick = (_event) => {
-    // if(sound!=undefined){
-    //     sound.pause()
-    // }
+    const channel = _event.target.id;
+    console.log('id: ', channel)
+    if(sound!=undefined){
+        sound.pause()
+    }
     setEvent(_event);
 
     if($(_event.target).text()=='▶️'){
@@ -26,13 +28,13 @@ const ChannelLIst = () => {
           sound.pause()
         }
         // $(event.target).text('')
-        $(event.target).text('▶️')
+        $(_event.target).text('▶️')
         console.log("pause")
     }
     //$(event.target).text('⏹️')
     //console.log("SLBC clicked")
     const sound_ = new Howl({
-        src: [import.meta.env.VITE_SLBC_URI],
+        src: [import.meta.env[`VITE_${channel}_URI`]],
         html5: true,
     });
     //console.log('sound', sound_)
@@ -51,10 +53,6 @@ const ChannelLIst = () => {
         if(playing){
             sound.play()
             console.log("start")
-        }
-        if(!playing){
-            sound.pause()
-            console.log("paused")
         }
     }
 
