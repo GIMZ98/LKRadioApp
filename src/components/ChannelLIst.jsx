@@ -7,7 +7,7 @@ const ChannelLIst = () => {
   const [event, setEvent] = useState(undefined)
   const [sound, setSound] = useState()
 
-
+  const channelList = ['BESTCOAST','FOX','GOLD','HIRU','LITE','RHYTHM','SIRASA','SITHA']
 
   const playClick = (_event) => {
     const channel = _event.target.id;
@@ -70,7 +70,18 @@ const ChannelLIst = () => {
   return (
     <>
       <div className='flex flex-wrap items-center justify-center max-w-screen min-h-screen bg-blue-500 m-[20px]'>
-        <div className='flex items-center justify-center sm:w-[300px] sm:h-[300px] w-[100px] h-[100px] bg-blue-600 border-1 border-white m-[5px]'>
+
+        {
+          channelList.map((channel, index) => {
+            return(
+              <div key={index} className='flex items-center justify-center sm:w-[300px] sm:h-[300px] w-[100px] h-[100px] bg-blue-600 border-1 border-white m-[5px]'>
+                <button onClick={playClick} id={channel} className='px-[2px] py-[2px] bg-slate-0 text-2xl'>▶️</button>
+              </div>
+            )
+
+          })
+        }
+        {/* <div className='flex items-center justify-center sm:w-[300px] sm:h-[300px] w-[100px] h-[100px] bg-blue-600 border-1 border-white m-[5px]'>
             <button onClick={playClick} id='SITHA' className='px-[2px] py-[2px] bg-slate-0 text-2xl'>▶️</button>
         </div>
         <div className='flex items-center justify-center sm:w-[300px] sm:h-[300px] w-[100px] h-[100px] bg-blue-600 border-1 border-white m-[5px]'>
@@ -93,7 +104,7 @@ const ChannelLIst = () => {
         </div>
         <div className='flex items-center justify-center sm:w-[300px] sm:h-[300px] w-[100px] h-[100px] bg-blue-600 border-1 border-white m-[5px]'>
             <button onClick={playClick} id='YFM' className='px-[2px] py-[2px] bg-slate-0 text-2xl'>▶️</button>
-        </div>
+        </div> */}
         
        
       </div>
