@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import $ from 'jquery'
 import { Howl } from 'howler';
+import channels from '../assets/channelsData';
 
 const ChannelLIst = () => {
   const [playing, setPlaying] = useState(false)
@@ -77,13 +78,14 @@ const ChannelLIst = () => {
 
   return (
     <>
-      <div className='flex flex-wrap items-center justify-center max-w-screen min-h-screen bg-blue-500 m-[20px]'>
+      <div className='flex flex-wrap items-center justify-center max-w-screen min-h-screen bg-blue-0 m-[20px]'>
 
         {
-          channelList.map((channel, index) => {
+          channels.map((channel, index) => {
             return(
-              <div key={index} className='flex items-center justify-center sm:w-[300px] sm:h-[300px] w-[100px] h-[100px] bg-blue-600 border-1 border-white m-[5px]'>
-                <button onClick={playClick} id={channel} className='px-[2px] py-[2px] bg-slate-0 text-2xl'>▶️</button>
+              <div key={index} className='relative flex items-center justify-center sm:w-[300px] sm:h-[300px] w-[100px] h-[100px] bg-blue-0 border-[2px] border-slate-600 m-[5px]'>
+                <img src={channel.img} alt="" className='w-full' />
+                <button onClick={playClick} id={channel.name} className='absolute px-[2px] py-[2px] bg-slate-0 text-2xl'>▶️</button>
               </div>
             )
 
