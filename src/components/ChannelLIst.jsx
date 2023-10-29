@@ -6,14 +6,20 @@ const ChannelLIst = () => {
   const [playing, setPlaying] = useState(false)
   const [event, setEvent] = useState(undefined)
   const [sound, setSound] = useState()
+  const howlObjects = []
 
   const channelList = ['BESTCOAST','FOX','GOLD','HIRU','LITE','RHYTHM','SIRASA','SITHA']
 
   const playClick = (_event) => {
+    // for (var howl of howlObjects){
+    //   howl.unload()
+    // }
+
     const channel = _event.target.id;
     console.log('id: ', channel)
     if(sound!=undefined){
         sound.pause()
+        sound.unload()
     }
     setEvent(_event);
 
@@ -40,6 +46,8 @@ const ChannelLIst = () => {
     //console.log('sound', sound_)
     //console.log('event', _event.target.className)
     setSound(sound_)
+    //howlObjects.push(sound_)
+    sound_.unload()
   }
 
   const stopClick = async () => {
