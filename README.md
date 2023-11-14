@@ -1,8 +1,13 @@
-# React + Vite
+# RadioApp
+Users can hear to FM radio stream by click/touch play button and pause the stream by click/touch pause button. If you want to add more channels need to find the online streaming URI of that channels and update the code as necessary.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Installation
+```cmd
+    git clone https://github.com/GIMZ98/LKRadioApp
+    cd LKRadioApp
+    npm install
+```
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## For run on local server
+```cmd
+npm run dev
